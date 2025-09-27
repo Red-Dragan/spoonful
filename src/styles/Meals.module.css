@@ -1,0 +1,226 @@
+.container {
+  min-height: 100vh;
+  background-color: #fafafa;
+  padding: 0;
+  margin: 0;
+}
+
+/* Header Section */
+.header {
+  text-align: center;
+  padding: 4rem 2rem 2rem;
+  background-color: #ffffff;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+/* Search Section */
+.searchSection {
+  background-color: #ffffff;
+  padding: 3rem 2rem;
+}
+
+.searchContainer {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  gap: 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.searchInput {
+  flex: 1;
+  padding: 1rem 1.5rem;
+  border: 2px solid #d1d5db;
+  border-right: none;
+  font-size: 1rem;
+  background-color: #ffffff;
+  color: #374151;
+  outline: none;
+  transition: border-color 0.2s ease;
+  border-radius: 5px 0 0 5px;
+}
+
+.searchInput:focus {
+  border-color: black;
+}
+
+.searchInput::placeholder {
+  color: #9ca3af;
+}
+
+.searchButton {
+  padding: 1rem 2rem;
+  background-color: #1f2937;
+  color: #ffffff;
+  border: 1px solid #1f2937;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  border-radius: 0px 5px 5px 0px ;
+}
+
+.searchButton:hover {
+  background-color: #374151;
+  border-color: #374151;
+}
+
+.searchButton:active {
+  transform: translateY(1px);
+}
+
+/* Recipe Grid Section */
+.recipesSection {
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.recipeGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.recipeCard {
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  overflow: hidden;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.recipeCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  border-color: #d1d5db;
+}
+
+.imageContainer {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  background-color: #f3f4f6;
+}
+
+.recipeImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.recipeCard:hover .recipeImage {
+  transform: scale(1.05);
+}
+
+.cardContent {
+  padding: 1.5rem;
+}
+
+.category {
+  display: inline-block;
+  background-color: #f3f4f6;
+  color: #6b7280;
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.25rem 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.recipeTitle {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin: 0 0 1rem 0;
+  line-height: 1.4;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.viewButton {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background-color: #ffffff;
+  color: #374151;
+  border: 1px solid #d1d5db;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-radius: 4px;
+}
+
+.viewButton:hover {
+  background-color: black;
+  border-color: #9ca3af;
+  color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.viewButton:active {
+  transform: translateY(1px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .title {
+    font-size: 2rem;
+  }
+  
+  .header {
+    padding: 3rem 1rem 1.5rem;
+  }
+  
+  .searchSection {
+    padding: 2rem 1rem;
+  }
+  
+  .searchContainer {
+    flex-direction: column;
+    box-shadow: none;
+  }
+  
+  .searchInput {
+    border-right: 1px solid #d1d5db;
+    border-bottom: none;
+  }
+  
+  .searchButton {
+    border-top: none;
+  }
+  
+  .recipesSection {
+    padding: 3rem 1rem;
+  }
+  
+  .recipeGrid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .recipeGrid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .cardContent {
+    padding: 1rem;
+  }
+}

@@ -1,10 +1,12 @@
 import React, { useState, useRef } from "react";
 import { useLoaderData } from "react-router";
+import styles from "../styles/Meals.module.css"
 
 type Meal = {
   strMeal: string;
   idMeal: string;
   strMealThumb: string;
+  strCategory?: string;
 };
 
 // Keep original function for search functionality
@@ -38,23 +40,62 @@ const HomePage: React.FC = () => {
     setSearchResults(result || []);
   };
 
+  const handleKeyPress = (e: React.KeyboardEvent) => {
+    if (e.key === 'Enter') {
+      handleSearch();
+    }
+  };
+
   const displayMeals = searchResults.length > 0 ? searchResults : meals;
 
   return (
-    <div>
-      <div>
-        <input ref={inputRef} type="text" placeholder="Search meals..." />
-        <button onClick={handleSearch}>Search</button>
-      </div>
-      <div>
-        {displayMeals?.map(meal => (
-          <div key={meal.idMeal}>
-            <h3>{meal.strMeal}</h3>
-            <img src={meal.strMealThumb} alt={meal.strMeal} width="100px"/>
-            <button>View Recipe</button>
-          </div>
-        ))}
-      </div>
+    <div className={styles.container}>
+      {/* Header Section */}
+      <header className={styles.header}>
+        <h1 className={styles.title}>Recipe Collection</h1>
+      </header>
+
+      {/* Search Section */}
+      <section className={styles.searchSection}>
+        <div className={styles.searchContainer}>
+          <input
+            ref={inputRef}
+            type="text"
+            placeholder="Search for recipes..."
+            className={styles.searchInput}
+            onKeyDown={handleKeyPress}
+          />
+          <button onClick={handleSearch} className={styles.searchButton}>
+            Search
+          </button>
+        </div>
+      </section>
+
+      {/* Recipe Grid Section */}
+      <section className={styles.recipesSection}>
+        <div className={styles.recipeGrid}>
+          {displayMeals?.map((meal) => (
+            <div key={meal.idMeal} className={styles.recipeCard}>
+              <div className={styles.imageContainer}>
+                <img
+                  src={meal.strMealThumb}
+                  alt={meal.strMeal}
+                  className={styles.recipeImage}
+                />
+              </div>
+              <div className={styles.cardContent}>
+                <span className={styles.category}>
+                  {meal.strCategory || "Main Dish"}
+                </span>
+                <h3 className={styles.recipeTitle}>{meal.strMeal}</h3>
+                <button className={styles.viewButton}>
+                  View Recipe
+                </button>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
     </div>
   );
 };

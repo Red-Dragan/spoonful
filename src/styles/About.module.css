@@ -1,0 +1,269 @@
+.container {
+  min-height: 100vh;
+  background-color: #fafafa;
+  padding: 0;
+  margin: 0;
+}
+
+/* Header Section */
+.header {
+  text-align: center;
+  padding: 5rem 2rem 3rem;
+  background-color: #ffffff;
+  /* border-bottom: 1px solid #e5e5e5; */
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin: 0 0 1.5rem 0;
+  letter-spacing: -0.02em;
+}
+
+.intro {
+  font-size: 1.125rem;
+  color: #4b5563;
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Story Section */
+.storySection {
+  padding: 5rem 2rem;
+  background-color: #ffffff;
+}
+
+.storyContainer {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.imagePlaceholder {
+  width: 480px;
+  height: 300px;
+  background-color: #f3f4f6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #e5e7eb;
+  overflow: hidden;
+  border-radius: 5px;
+}
+
+.imageIcon {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.imagePlaceholder:hover .imageIcon {
+  transform: scale(1.05);
+}
+
+.imageIcon {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: all 0.3s ease;
+  filter: brightness(0.95) contrast(1.05);
+}
+
+.imageIcon:hover {
+  filter: brightness(1) contrast(1.1);
+  transform: scale(1.02);
+}
+
+
+.textSection {
+  padding-left: 2rem;
+}
+
+.storyTitle {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin: 0 0 1.5rem 0;
+  letter-spacing: -0.01em;
+}
+
+.storyText {
+  font-size: 1rem;
+  color: #4b5563;
+  line-height: 1.7;
+  margin: 0 0 1.5rem 0;
+}
+
+.storyText:last-child {
+  margin-bottom: 0;
+}
+
+/* Features Section */
+.featuresSection {
+  padding: 5rem 2rem;
+  background-color: #fafafa;
+}
+
+.featuresTitle {
+  text-align: center;
+  font-size: 2.25rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin: 0 0 3rem 0;
+  letter-spacing: -0.01em;
+}
+
+.featuresGrid {
+  max-width: 900px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+}
+
+.featureCard {
+  background-color: #ffffff;
+  padding: 2.5rem 2rem;
+  text-align: center;
+  border: 1px solid #e5e7eb;
+  transition: all 0.2s ease;
+  cursor: default;
+}
+
+.featureCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  border-color: #d1d5db;
+}
+
+.featureIcon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.featureTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin: 0 0 1rem 0;
+}
+
+.featureText {
+  font-size: 0.95rem;
+  color: #6b7280;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Closing Section */
+.closingSection {
+  padding: 5rem 2rem;
+  background-color: #ffffff;
+  text-align: center;
+  border-top: 1px solid #e5e5e5;
+}
+
+.quote {
+  font-size: 1.5rem;
+  font-weight: 400;
+  font-style: italic;
+  color: #374151;
+  line-height: 1.6;
+  max-width: 700px;
+  margin: 0 auto 1.5rem auto;
+  border-left: none;
+  padding: 0;
+}
+
+.quoteAuthor {
+  font-size: 1rem;
+  color: #6b7280;
+  font-weight: 500;
+  margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .title {
+    font-size: 2.5rem;
+  }
+  
+  .header {
+    padding: 4rem 1rem 2rem;
+  }
+  
+  .storySection {
+    padding: 4rem 1rem;
+  }
+  
+  .storyContainer {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    text-align: center;
+  }
+  
+  .textSection {
+    padding-left: 0;
+  }
+  
+  .imagePlaceholder {
+    width: 250px;
+    height: 250px;
+  }
+  
+  .featuresSection {
+    padding: 4rem 1rem;
+  }
+  
+  .featuresGrid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .featureCard {
+    padding: 2rem 1.5rem;
+  }
+  
+  .closingSection {
+    padding: 4rem 1rem;
+  }
+  
+  .quote {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 2rem;
+  }
+  
+  .intro {
+    font-size: 1rem;
+  }
+  
+  .imagePlaceholder {
+    width: 200px;
+    height: 200px;
+  }
+  
+  .imageIcon {
+    font-size: 3rem;
+  }
+  
+  .featureCard {
+    padding: 1.5rem 1rem;
+  }
+  
+  .quote {
+    font-size: 1.125rem;
+  }
+}

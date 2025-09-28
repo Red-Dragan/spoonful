@@ -20,6 +20,12 @@
   letter-spacing: -0.02em;
 }
 
+.subtitle {
+  color: #6b7280;
+  font-size: 1rem;
+  margin-top: 0.5rem;
+}
+
 /* Search Section */
 .searchSection {
   background-color: #ffffff;
@@ -65,7 +71,7 @@
   cursor: pointer;
   transition: all 0.2s ease;
   white-space: nowrap;
-  border-radius: 0px 5px 5px 0px ;
+  border-radius: 0px 5px 5px 0px;
 }
 
 .searchButton:hover {
@@ -77,29 +83,50 @@
   transform: translateY(1px);
 }
 
-/* Recipe Grid Section */
-.recipesSection {
+.clearButton {
+  background-color: orangered;
+  color: white;
+  border: none;
+  padding: 1rem 1.5rem;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  margin-left: 0.5rem;
+}
+
+.clearButton:hover {
+  background-color: rgb(187, 51, 2);
+}
+
+/* Recipe Grid Section - Fixed class names */
+.recipesSection,
+.mealsSection {
   padding: 4rem 2rem;
   max-width: 1200px;
   margin: 0 auto;
 }
 
-.recipeGrid {
+.recipeGrid,
+.mealsGrid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 2rem;
 }
 
-.recipeCard {
+.recipeCard,
+.mealCard {
   background-color: #ffffff;
   border: 1px solid #e5e7eb;
   overflow: hidden;
   transition: all 0.2s ease;
   cursor: pointer;
-  border-radius: 5px;
+  border-radius: 10px;
 }
 
-.recipeCard:hover {
+.recipeCard:hover,
+.mealCard:hover {
   transform: translateY(-2px);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
   border-color: #d1d5db;
@@ -112,18 +139,21 @@
   background-color: #f3f4f6;
 }
 
-.recipeImage {
+.recipeImage,
+.mealImage {
   width: 100%;
   height: 100%;
   object-fit: cover;
   transition: transform 0.3s ease;
 }
 
-.recipeCard:hover .recipeImage {
+.recipeCard:hover .recipeImage,
+.mealCard:hover .mealImage {
   transform: scale(1.05);
 }
 
-.cardContent {
+.cardContent,
+.mealInfo {
   padding: 1.5rem;
 }
 
@@ -137,9 +167,11 @@
   letter-spacing: 0.05em;
   padding: 0.25rem 0.75rem;
   margin-bottom: 0.75rem;
+  border-radius: 5px;
 }
 
-.recipeTitle {
+.recipeTitle,
+.mealTitle {
   font-size: 1.125rem;
   font-weight: 600;
   color: #1f2937;
@@ -181,46 +213,57 @@
   .title {
     font-size: 2rem;
   }
-  
+
   .header {
     padding: 3rem 1rem 1.5rem;
   }
-  
+
   .searchSection {
     padding: 2rem 1rem;
   }
-  
+
   .searchContainer {
     flex-direction: column;
     box-shadow: none;
   }
-  
+
   .searchInput {
-    border-right: 1px solid #d1d5db;
+    border-right: 2px solid #d1d5db;
     border-bottom: none;
+    border-radius: 5px 5px 0 0;
   }
-  
+
   .searchButton {
     border-top: none;
+    border-radius: 0 0 5px 5px;
   }
-  
-  .recipesSection {
+
+  .clearButton {
+    margin-left: 0;
+    margin-top: 0.5rem;
+  }
+
+  .recipesSection,
+  .mealsSection {
     padding: 3rem 1rem;
   }
-  
-  .recipeGrid {
+
+  .recipeGrid,
+  .mealsGrid {
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 1.5rem;
   }
 }
 
 @media (max-width: 480px) {
-  .recipeGrid {
+  .recipeGrid,
+  .mealsGrid {
     grid-template-columns: 1fr;
     gap: 1rem;
   }
-  
-  .cardContent {
+
+  .cardContent,
+  .mealInfo {
     padding: 1rem;
   }
 }

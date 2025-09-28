@@ -1,0 +1,303 @@
+.container {
+  min-height: 100vh;
+  background-color: #fafafa;
+  padding: 0;
+  margin: 0;
+}
+
+.header {
+  background-color: #ffffff;
+  padding: 2rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.backButton {
+  display: inline-block;
+  margin-bottom: 1.5rem;
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  padding: 0.75rem 1.25rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #374151;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-width: 120px;
+  border-radius: 5px;
+}
+
+.backButton:hover {
+  background-color: black;
+  color: #fff;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.backButton:active {
+  transform: translateY(0);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin: 0 0 1rem 0;
+  letter-spacing: -0.02em;
+}
+
+.metaInfo {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.category,
+.area {
+  background-color: #f3f4f6;
+  color: #6b7280;
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+}
+
+.content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.imageSection {
+  position: sticky;
+  top: 2rem;
+}
+
+.recipeImage {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.detailsContainer {
+  max-height: 70vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 1.5rem;
+  border-radius: 8px;
+  background-color: #e5e7eb;
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: #888 #f1f1f1;
+}
+
+.detailsContainer::-webkit-scrollbar {
+  width: 8px;
+}
+
+.detailsContainer::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+.detailsContainer::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+.detailsContainer::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.detailsContainer h3 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  color: #333;
+  position: sticky;
+  top: 0;
+  padding: 0.5rem 0;
+  z-index: 1;
+}
+
+.detailsContainer h3:first-child {
+  margin-top: 0;
+}
+
+
+.sectionTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin: 0 0 1.5rem 0;
+  border-bottom: 2px solid #f3f4f6;
+  padding-bottom: 0.5rem;
+}
+
+.ingredientsSection {
+  margin-bottom: 3rem;
+}
+
+.ingredientsList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.ingredientItem {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.ingredientItem:last-child {
+  border-bottom: none;
+}
+
+.measure {
+  font-weight: 600;
+  color: #1f2937;
+  min-width: 100px;
+  margin-right: 1rem;
+}
+
+.ingredient {
+  color: #4b5563;
+  flex: 1;
+}
+
+.instructionsSection {
+  margin-bottom: 3rem;
+}
+
+.instructions {
+  line-height: 1.8;
+}
+
+.instructionStep {
+  margin: 0 0 1rem 0;
+  color: #4b5563;
+  font-size: 1rem;
+}
+
+.instructionStep:last-child {
+  margin-bottom: 0;
+}
+
+.linksSection {
+  margin-bottom: 2rem;
+}
+
+.links {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.link {
+  display: inline-block;
+  background-color: #1f2937;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+  border-radius: 5px;
+}
+
+.link:hover {
+  background-color: #374151;
+}
+
+@media (max-width: 768px) {
+  .backButton {
+    position: relative;
+    top: 0;
+    left: 0;
+    margin-bottom: 1rem;
+  }
+
+  .header {
+    padding: 1.5rem 1rem;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .metaInfo {
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: center;
+  }
+
+  .content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 2rem 1rem;
+  }
+
+  .imageSection {
+    position: static;
+  }
+
+  .recipeImage {
+    height: 250px;
+  }
+
+  .detailsContainer {
+    padding: 1.5rem;
+  }
+
+  .measure {
+    min-width: 80px;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 1.75rem;
+  }
+
+  .content {
+    padding: 1rem;
+  }
+
+  .detailsContainer {
+    padding: 1rem;
+  }
+
+  .ingredientItem {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+  }
+
+  .measure {
+    min-width: auto;
+    margin-right: 0;
+  }
+
+  .links {
+    flex-direction: column;
+  }
+
+  .link {
+    text-align: center;
+  }
+}
+
+
